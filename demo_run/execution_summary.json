@@ -1,0 +1,19 @@
+{
+  "pattern_version": "1.0.0",
+  "request": "CSV 파일을 읽어서 월별 매출 요약을 만드는 Python 스크립트를 만들어줘.",
+  "final_status": "PASS",
+  "attempts": 2,
+  "checks_total": 7,
+  "checks_passed": 7,
+  "failed_checks": [],
+  "artifacts": {
+    "contract_json": "contract.json",
+    "contract_md": "contract.md",
+    "generated_script": "generated_monthly_sales_summary.py",
+    "verification_trace": "verification_trace.json",
+    "final_report": "final_report.md",
+    "repair_plans": [
+      "repair_plan_attempt_1.json"
+    ]
+  }
+}

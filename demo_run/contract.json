@@ -1,0 +1,75 @@
+{
+  "goal": "Build a CLI script that reads a CSV file and prints monthly revenue totals.",
+  "scope": [
+    "Accept one CSV file path from the command line.",
+    "Validate the required month and revenue columns.",
+    "Print monthly revenue totals sorted by month.",
+    "Fail loudly for invalid inputs instead of emitting partial results."
+  ],
+  "out_of_scope": [
+    "Inferring non-normalized date formats.",
+    "Currency conversion.",
+    "Graphical user interface.",
+    "Writing output files."
+  ],
+  "assumptions": [
+    "The CSV input uses UTF-8 encoding.",
+    "The required columns are month and revenue.",
+    "The month value is already normalized, for example 2026-01.",
+    "The revenue value must be numeric.",
+    "Original request: CSV 파일을 읽어서 월별 매출 요약을 만드는 Python 스크립트를 만들어줘."
+  ],
+  "acceptance_criteria": [
+    {
+      "id": "C1",
+      "priority": "must",
+      "category": "interface",
+      "statement": "The script accepts the input CSV path as a command-line argument.",
+      "verification": "Running the script without an argument must fail with a usage message.",
+      "evidence": "process exit code and stderr"
+    },
+    {
+      "id": "C2",
+      "priority": "must",
+      "category": "input-validation",
+      "statement": "The script validates that month and revenue columns exist.",
+      "verification": "A CSV missing revenue must fail with a clear missing-column error.",
+      "evidence": "process exit code and stderr"
+    },
+    {
+      "id": "C3",
+      "priority": "must",
+      "category": "correctness",
+      "statement": "The script prints sorted monthly totals in CSV format.",
+      "verification": "A sample CSV must produce the expected month,total_revenue output.",
+      "evidence": "stdout exact match"
+    },
+    {
+      "id": "C4",
+      "priority": "must",
+      "category": "input-validation",
+      "statement": "The script rejects non-numeric revenue values.",
+      "verification": "A CSV containing a non-numeric revenue value must fail with a clear error.",
+      "evidence": "process exit code and stderr"
+    },
+    {
+      "id": "C5",
+      "priority": "must",
+      "category": "input-validation",
+      "statement": "The script rejects rows with an empty month value.",
+      "verification": "A CSV containing an empty month must fail with a clear row-level error.",
+      "evidence": "process exit code and stderr"
+    },
+    {
+      "id": "C6",
+      "priority": "must",
+      "category": "resilience",
+      "statement": "The script handles a missing input file without a Python traceback.",
+      "verification": "A non-existent file path must fail with a clear file-not-found error.",
+      "evidence": "process exit code and stderr"
+    }
+  ],
+  "failure_policy": "All must criteria must pass before the task is considered complete.",
+  "repair_policy": "Repair only the criteria that failed in the latest verification run.",
+  "max_iterations": 2
+}

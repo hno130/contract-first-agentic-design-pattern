@@ -1,0 +1,151 @@
+{
+  "validated_at_utc": "2026-06-19T04:57:20.778261+00:00",
+  "passed": true,
+  "checks": [
+    {
+      "name": "required file: README.md",
+      "passed": true,
+      "detail": "C:\\Users\\hno13\\Documents\\Codex\\2026-06-19\\ai-agentic-design-pattern\\outputs\\contract_first_agent_pattern\\README.md"
+    },
+    {
+      "name": "required file: FINAL_BRIEFING.md",
+      "passed": true,
+      "detail": "C:\\Users\\hno13\\Documents\\Codex\\2026-06-19\\ai-agentic-design-pattern\\outputs\\contract_first_agent_pattern\\FINAL_BRIEFING.md"
+    },
+    {
+      "name": "required file: PATTERN_SPEC.md",
+      "passed": true,
+      "detail": "C:\\Users\\hno13\\Documents\\Codex\\2026-06-19\\ai-agentic-design-pattern\\outputs\\contract_first_agent_pattern\\PATTERN_SPEC.md"
+    },
+    {
+      "name": "required file: IMPLEMENTATION_GUIDE.md",
+      "passed": true,
+      "detail": "C:\\Users\\hno13\\Documents\\Codex\\2026-06-19\\ai-agentic-design-pattern\\outputs\\contract_first_agent_pattern\\IMPLEMENTATION_GUIDE.md"
+    },
+    {
+      "name": "required file: PROMPT_TEMPLATES.md",
+      "passed": true,
+      "detail": "C:\\Users\\hno13\\Documents\\Codex\\2026-06-19\\ai-agentic-design-pattern\\outputs\\contract_first_agent_pattern\\PROMPT_TEMPLATES.md"
+    },
+    {
+      "name": "required file: IMPROVEMENT_BRIEF.md",
+      "passed": true,
+      "detail": "C:\\Users\\hno13\\Documents\\Codex\\2026-06-19\\ai-agentic-design-pattern\\outputs\\contract_first_agent_pattern\\IMPROVEMENT_BRIEF.md"
+    },
+    {
+      "name": "required file: contract_schema.json",
+      "passed": true,
+      "detail": "C:\\Users\\hno13\\Documents\\Codex\\2026-06-19\\ai-agentic-design-pattern\\outputs\\contract_first_agent_pattern\\contract_schema.json"
+    },
+    {
+      "name": "required file: contract_first_demo.py",
+      "passed": true,
+      "detail": "C:\\Users\\hno13\\Documents\\Codex\\2026-06-19\\ai-agentic-design-pattern\\outputs\\contract_first_agent_pattern\\contract_first_demo.py"
+    },
+    {
+      "name": "required file: validate_package.py",
+      "passed": true,
+      "detail": "C:\\Users\\hno13\\Documents\\Codex\\2026-06-19\\ai-agentic-design-pattern\\outputs\\contract_first_agent_pattern\\validate_package.py"
+    },
+    {
+      "name": "compile package python",
+      "passed": true,
+      "detail": "compiled"
+    },
+    {
+      "name": "run demo",
+      "passed": true,
+      "detail": "exit_code=0\nstdout==== Contract-First Agent Demo ===\nPattern version: 1.0.0\nContract generated: C:\\Users\\hno13\\Documents\\Codex\\2026-06-19\\ai-agentic-design-pattern\\outputs\\contract_first_agent_pattern\\demo_run\\contract.json\nGoal: Build a CLI script that reads a CSV file and prints monthly revenue totals.\nAcceptance criteria: 6\nVerification checks: 7\n\nAttempt 1: execute -> verify\nFailed criteria:\n- C2: missing required column\n- C4: reject bad revenue\n- C5: reject missing month\n- C6: handle missing file\nRepair plan written: C:\\Users\\hno13\\Documents\\Codex\\2026-06-19\\ai-agentic-design-pattern\\outputs\\contract_first_agent_pattern\\demo_run\\repair_plan_attempt_1.json\n\nAttempt 2: execute -> verify\nAll must acceptance criteria passed.\n\n=== Final Report ===\nPASS C1: usage message\nPASS C2: missing required column\nPASS C3: valid monthly summary\nPASS C4: reject bad revenue\nPASS C5: reject missing month\nPASS C6: handle missing file\nPASS C3: hidden sorting sample\n\nGenerated script: C:\\Users\\hno13\\Documents\\Codex\\2026-06-19\\ai-agentic-design-pattern\\outputs\\contract_first_agent_pattern\\demo_run\\generated_monthly_sales_summary.py\nVerification trace: C:\\Users\\hno13\\Documents\\Codex\\2026-06-19\\ai-agentic-design-pattern\\outputs\\contract_first_agent_pattern\\demo_run\\verification_trace.json\nFinal report: C:\\Users\\hno13\\Documents\\Codex\\2026-06-19\\ai-agentic-design-pattern\\outputs\\contract_first_agent_pattern\\demo_run\\final_report.md\nManifest: C:\\Users\\hno13\\Documents\\Codex\\2026-06-19\\ai-agentic-design-pattern\\outputs\\contract_first_agent_pattern\\demo_run\\manifest.json\n\nstderr="
+    },
+    {
+      "name": "required demo artifact: contract.json",
+      "passed": true,
+      "detail": "C:\\Users\\hno13\\Documents\\Codex\\2026-06-19\\ai-agentic-design-pattern\\outputs\\contract_first_agent_pattern\\demo_run\\contract.json"
+    },
+    {
+      "name": "required demo artifact: contract.md",
+      "passed": true,
+      "detail": "C:\\Users\\hno13\\Documents\\Codex\\2026-06-19\\ai-agentic-design-pattern\\outputs\\contract_first_agent_pattern\\demo_run\\contract.md"
+    },
+    {
+      "name": "required demo artifact: generated_monthly_sales_summary.py",
+      "passed": true,
+      "detail": "C:\\Users\\hno13\\Documents\\Codex\\2026-06-19\\ai-agentic-design-pattern\\outputs\\contract_first_agent_pattern\\demo_run\\generated_monthly_sales_summary.py"
+    },
+    {
+      "name": "required demo artifact: verification_trace.json",
+      "passed": true,
+      "detail": "C:\\Users\\hno13\\Documents\\Codex\\2026-06-19\\ai-agentic-design-pattern\\outputs\\contract_first_agent_pattern\\demo_run\\verification_trace.json"
+    },
+    {
+      "name": "required demo artifact: repair_plan_attempt_1.json",
+      "passed": true,
+      "detail": "C:\\Users\\hno13\\Documents\\Codex\\2026-06-19\\ai-agentic-design-pattern\\outputs\\contract_first_agent_pattern\\demo_run\\repair_plan_attempt_1.json"
+    },
+    {
+      "name": "required demo artifact: final_report.md",
+      "passed": true,
+      "detail": "C:\\Users\\hno13\\Documents\\Codex\\2026-06-19\\ai-agentic-design-pattern\\outputs\\contract_first_agent_pattern\\demo_run\\final_report.md"
+    },
+    {
+      "name": "required demo artifact: execution_summary.json",
+      "passed": true,
+      "detail": "C:\\Users\\hno13\\Documents\\Codex\\2026-06-19\\ai-agentic-design-pattern\\outputs\\contract_first_agent_pattern\\demo_run\\execution_summary.json"
+    },
+    {
+      "name": "required demo artifact: manifest.json",
+      "passed": true,
+      "detail": "C:\\Users\\hno13\\Documents\\Codex\\2026-06-19\\ai-agentic-design-pattern\\outputs\\contract_first_agent_pattern\\demo_run\\manifest.json"
+    },
+    {
+      "name": "required demo artifact: cases/valid_sales.csv",
+      "passed": true,
+      "detail": "C:\\Users\\hno13\\Documents\\Codex\\2026-06-19\\ai-agentic-design-pattern\\outputs\\contract_first_agent_pattern\\demo_run\\cases\\valid_sales.csv"
+    },
+    {
+      "name": "required demo artifact: cases/missing_column.csv",
+      "passed": true,
+      "detail": "C:\\Users\\hno13\\Documents\\Codex\\2026-06-19\\ai-agentic-design-pattern\\outputs\\contract_first_agent_pattern\\demo_run\\cases\\missing_column.csv"
+    },
+    {
+      "name": "required demo artifact: cases/bad_revenue.csv",
+      "passed": true,
+      "detail": "C:\\Users\\hno13\\Documents\\Codex\\2026-06-19\\ai-agentic-design-pattern\\outputs\\contract_first_agent_pattern\\demo_run\\cases\\bad_revenue.csv"
+    },
+    {
+      "name": "required demo artifact: cases/missing_month.csv",
+      "passed": true,
+      "detail": "C:\\Users\\hno13\\Documents\\Codex\\2026-06-19\\ai-agentic-design-pattern\\outputs\\contract_first_agent_pattern\\demo_run\\cases\\missing_month.csv"
+    },
+    {
+      "name": "required demo artifact: cases/hidden_order_sales.csv",
+      "passed": true,
+      "detail": "C:\\Users\\hno13\\Documents\\Codex\\2026-06-19\\ai-agentic-design-pattern\\outputs\\contract_first_agent_pattern\\demo_run\\cases\\hidden_order_sales.csv"
+    },
+    {
+      "name": "validate contract shape",
+      "passed": true,
+      "detail": "contract shape is valid"
+    },
+    {
+      "name": "validate verification trace",
+      "passed": true,
+      "detail": "trace shows fail -> repair -> pass"
+    },
+    {
+      "name": "validate execution summary",
+      "passed": true,
+      "detail": "summary is passing"
+    },
+    {
+      "name": "compile generated script",
+      "passed": true,
+      "detail": "compiled"
+    },
+    {
+      "name": "run generated sample",
+      "passed": true,
+      "detail": "exit_code=0\nstdout='month,total_revenue\\n2026-01,140.50\\n2026-02,20.00\\n'\nstderr=''"
+    }
+  ]
+}

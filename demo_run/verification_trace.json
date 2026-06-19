@@ -1,0 +1,161 @@
+{
+  "pattern_version": "1.0.0",
+  "contract_goal": "Build a CLI script that reads a CSV file and prints monthly revenue totals.",
+  "attempts": [
+    {
+      "attempt": 1,
+      "passed": false,
+      "checks": [
+        {
+          "criterion_id": "C1",
+          "priority": "must",
+          "name": "usage message",
+          "passed": true,
+          "evidence": "process exit code and stderr",
+          "detail": "Expected non-zero exit and Usage message.\nexit_code=2\nstdout=''\nstderr='Usage: python generated_monthly_sales_summary.py <input.csv>\\n'"
+        },
+        {
+          "criterion_id": "C2",
+          "priority": "must",
+          "name": "missing required column",
+          "passed": false,
+          "evidence": "process exit code and stderr",
+          "detail": "Expected clear missing-column error.\nexit_code=1\nstdout=''\nstderr='Traceback (most recent call last):\\n  File \"C:\\\\Users\\\\hno13\\\\Documents\\\\Codex\\\\2026-06-19\\\\ai-agentic-design-pattern\\\\outputs\\\\contract_first_agent_pattern\\\\demo_run\\\\generated_monthly_sales_summary.py\", line 24, in <module>\\n    raise SystemExit(main(sys.argv))\\n                     ~~~~^^^^^^^^^^\\n  File \"C:\\\\Users\\\\hno13\\\\Documents\\\\Codex\\\\2026-06-19\\\\ai-agentic-design-pattern\\\\outputs\\\\contract_first_agent_pattern\\\\demo_run\\\\generated_monthly_sales_summary.py\", line 15, in main\\n    totals[row[\"month\"]] += float(row[\"revenue\"])\\n                                  ~~~^^^^^^^^^^^\\nKeyError: \\'revenue\\'\\n'"
+        },
+        {
+          "criterion_id": "C3",
+          "priority": "must",
+          "name": "valid monthly summary",
+          "passed": true,
+          "evidence": "stdout exact match",
+          "detail": "Expected stdout exactly:\nmonth,total_revenue\n2026-01,140.50\n2026-02,20.00\n\nexit_code=0\nstdout='month,total_revenue\\n2026-01,140.50\\n2026-02,20.00\\n'\nstderr=''"
+        },
+        {
+          "criterion_id": "C4",
+          "priority": "must",
+          "name": "reject bad revenue",
+          "passed": false,
+          "evidence": "process exit code and stderr",
+          "detail": "Expected clear invalid-revenue error.\nexit_code=1\nstdout=''\nstderr='Traceback (most recent call last):\\n  File \"C:\\\\Users\\\\hno13\\\\Documents\\\\Codex\\\\2026-06-19\\\\ai-agentic-design-pattern\\\\outputs\\\\contract_first_agent_pattern\\\\demo_run\\\\generated_monthly_sales_summary.py\", line 24, in <module>\\n    raise SystemExit(main(sys.argv))\\n                     ~~~~^^^^^^^^^^\\n  File \"C:\\\\Users\\\\hno13\\\\Documents\\\\Codex\\\\2026-06-19\\\\ai-agentic-design-pattern\\\\outputs\\\\contract_first_agent_pattern\\\\demo_run\\\\generated_monthly_sales_summary.py\", line 15, in main\\n    totals[row[\"month\"]] += float(row[\"revenue\"])\\n                            ~~~~~^^^^^^^^^^^^^^^^\\nValueError: could not convert string to float: \\'not-a-number\\'\\n'"
+        },
+        {
+          "criterion_id": "C5",
+          "priority": "must",
+          "name": "reject missing month",
+          "passed": false,
+          "evidence": "process exit code and stderr",
+          "detail": "Expected clear missing-month error.\nexit_code=0\nstdout='month,total_revenue\\n,10.00\\n'\nstderr=''"
+        },
+        {
+          "criterion_id": "C6",
+          "priority": "must",
+          "name": "handle missing file",
+          "passed": false,
+          "evidence": "process exit code and stderr",
+          "detail": "Expected clear file-not-found error without traceback.\nexit_code=1\nstdout=''\nstderr='Traceback (most recent call last):\\n  File \"C:\\\\Users\\\\hno13\\\\Documents\\\\Codex\\\\2026-06-19\\\\ai-agentic-design-pattern\\\\outputs\\\\contract_first_agent_pattern\\\\demo_run\\\\generated_monthly_sales_summary.py\", line 24, in <module>\\n    raise SystemExit(main(sys.argv))\\n                     ~~~~^^^^^^^^^^\\n  File \"C:\\\\Users\\\\hno13\\\\Documents\\\\Codex\\\\2026-06-19\\\\ai-agentic-design-pattern\\\\outputs\\\\contract_first_agent_pattern\\\\demo_run\\\\generated_monthly_sales_summary.py\", line 12, in main\\n    with open(argv[1], newline=\"\", encoding=\"utf-8\") as handle:\\n         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\nFileNotFoundError: [Errno 2] No such file or directory: \\'C:\\\\\\\\Users\\\\\\\\hno13\\\\\\\\Documents\\\\\\\\Codex\\\\\\\\2026-06-19\\\\\\\\ai-agentic-design-pattern\\\\\\\\outputs\\\\\\\\contract_first_agent_pattern\\\\\\\\demo_run\\\\\\\\cases\\\\\\\\does_not_exist.csv\\'\\n'"
+        },
+        {
+          "criterion_id": "C3",
+          "priority": "must",
+          "name": "hidden sorting sample",
+          "passed": true,
+          "evidence": "stdout exact match",
+          "detail": "Expected sorted stdout exactly:\nmonth,total_revenue\n2026-01,2.00\n2026-02,3.00\n2026-03,1.00\n\nexit_code=0\nstdout='month,total_revenue\\n2026-01,2.00\\n2026-02,3.00\\n2026-03,1.00\\n'\nstderr=''"
+        }
+      ]
+    },
+    {
+      "attempt": 2,
+      "passed": true,
+      "checks": [
+        {
+          "criterion_id": "C1",
+          "priority": "must",
+          "name": "usage message",
+          "passed": true,
+          "evidence": "process exit code and stderr",
+          "detail": "Expected non-zero exit and Usage message.\nexit_code=2\nstdout=''\nstderr='Usage: python generated_monthly_sales_summary.py <input.csv>\\n'"
+        },
+        {
+          "criterion_id": "C2",
+          "priority": "must",
+          "name": "missing required column",
+          "passed": true,
+          "evidence": "process exit code and stderr",
+          "detail": "Expected clear missing-column error.\nexit_code=3\nstdout=''\nstderr='ERROR: Missing required columns: revenue\\n'"
+        },
+        {
+          "criterion_id": "C3",
+          "priority": "must",
+          "name": "valid monthly summary",
+          "passed": true,
+          "evidence": "stdout exact match",
+          "detail": "Expected stdout exactly:\nmonth,total_revenue\n2026-01,140.50\n2026-02,20.00\n\nexit_code=0\nstdout='month,total_revenue\\n2026-01,140.50\\n2026-02,20.00\\n'\nstderr=''"
+        },
+        {
+          "criterion_id": "C4",
+          "priority": "must",
+          "name": "reject bad revenue",
+          "passed": true,
+          "evidence": "process exit code and stderr",
+          "detail": "Expected clear invalid-revenue error.\nexit_code=5\nstdout=''\nstderr=\"ERROR: Invalid revenue at row 2: 'not-a-number'\\n\""
+        },
+        {
+          "criterion_id": "C5",
+          "priority": "must",
+          "name": "reject missing month",
+          "passed": true,
+          "evidence": "process exit code and stderr",
+          "detail": "Expected clear missing-month error.\nexit_code=4\nstdout=''\nstderr='ERROR: Missing month at row 2\\n'"
+        },
+        {
+          "criterion_id": "C6",
+          "priority": "must",
+          "name": "handle missing file",
+          "passed": true,
+          "evidence": "process exit code and stderr",
+          "detail": "Expected clear file-not-found error without traceback.\nexit_code=6\nstdout=''\nstderr='ERROR: File not found: C:\\\\Users\\\\hno13\\\\Documents\\\\Codex\\\\2026-06-19\\\\ai-agentic-design-pattern\\\\outputs\\\\contract_first_agent_pattern\\\\demo_run\\\\cases\\\\does_not_exist.csv\\n'"
+        },
+        {
+          "criterion_id": "C3",
+          "priority": "must",
+          "name": "hidden sorting sample",
+          "passed": true,
+          "evidence": "stdout exact match",
+          "detail": "Expected sorted stdout exactly:\nmonth,total_revenue\n2026-01,2.00\n2026-02,3.00\n2026-03,1.00\n\nexit_code=0\nstdout='month,total_revenue\\n2026-01,2.00\\n2026-02,3.00\\n2026-03,1.00\\n'\nstderr=''"
+        }
+      ]
+    }
+  ],
+  "repair_plans": [
+    {
+      "after_attempt": 1,
+      "actions": [
+        {
+          "criterion_id": "C2",
+          "diagnosis": "The implementation reads row values before validating CSV headers.",
+          "action": "Validate required columns immediately after DictReader initialization.",
+          "reverification": "Run the missing-column CSV case and expect a clear error."
+        },
+        {
+          "criterion_id": "C4",
+          "diagnosis": "The implementation lets ValueError escape as a Python traceback.",
+          "action": "Catch numeric conversion errors and return a clear row-level message.",
+          "reverification": "Run the bad-revenue CSV case and expect an Invalid revenue error."
+        },
+        {
+          "criterion_id": "C5",
+          "diagnosis": "The implementation accepts an empty month and aggregates it as a blank key.",
+          "action": "Strip and validate month before adding revenue to totals.",
+          "reverification": "Run the missing-month CSV case and expect a Missing month error."
+        },
+        {
+          "criterion_id": "C6",
+          "diagnosis": "The implementation lets FileNotFoundError escape as a Python traceback.",
+          "action": "Catch FileNotFoundError and return a clear file-not-found message.",
+          "reverification": "Run the missing-file case and expect a File not found error."
+        }
+      ]
+    }
+  ]
+}

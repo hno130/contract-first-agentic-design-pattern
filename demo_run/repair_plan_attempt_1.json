@@ -1,0 +1,29 @@
+{
+  "after_attempt": 1,
+  "actions": [
+    {
+      "criterion_id": "C2",
+      "diagnosis": "The implementation reads row values before validating CSV headers.",
+      "action": "Validate required columns immediately after DictReader initialization.",
+      "reverification": "Run the missing-column CSV case and expect a clear error."
+    },
+    {
+      "criterion_id": "C4",
+      "diagnosis": "The implementation lets ValueError escape as a Python traceback.",
+      "action": "Catch numeric conversion errors and return a clear row-level message.",
+      "reverification": "Run the bad-revenue CSV case and expect an Invalid revenue error."
+    },
+    {
+      "criterion_id": "C5",
+      "diagnosis": "The implementation accepts an empty month and aggregates it as a blank key.",
+      "action": "Strip and validate month before adding revenue to totals.",
+      "reverification": "Run the missing-month CSV case and expect a Missing month error."
+    },
+    {
+      "criterion_id": "C6",
+      "diagnosis": "The implementation lets FileNotFoundError escape as a Python traceback.",
+      "action": "Catch FileNotFoundError and return a clear file-not-found message.",
+      "reverification": "Run the missing-file case and expect a File not found error."
+    }
+  ]
+}
