@@ -1,0 +1,1 @@
+# contract-first-agentic-design-pattern
